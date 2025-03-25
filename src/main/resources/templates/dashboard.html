@@ -45,11 +45,6 @@
         .alert {
             border-radius: 15px;
         }
-        
-        img {
-            display: block;
-            width: 220px;
-        }
     </style>
 </head>
 <body>
@@ -57,8 +52,7 @@
     <div class="top-bar py-3 mb-4">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h4 class="mb-0"><img th:src="@{/images/daybyday-logo.png}" alt="Logo"></h4>
-
+                <h4 class="mb-0">Dashboard</h4>
                 <form th:action="@{/logout}" method="post" class="m-0">
                     <button type="submit" class="btn btn-outline-danger">
                         <i class="bi bi-box-arrow-right"></i> Déconnexion
@@ -69,15 +63,6 @@
     </div>
 
     <div class="container">
-        <!-- Header Section -->
-        <div class="row mb-4">
-            <div class="col-md-12" style="text-align: right;">
-                <h2 class="page-title">
-                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
-                </h2>
-            </div>
-        </div>
-
         <!-- Alert pour les erreurs -->
         <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
             <i class="bi bi-exclamation-triangle-fill"></i>

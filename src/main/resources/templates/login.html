@@ -7,26 +7,17 @@
     <style>
         .login-container {
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 170px;
-            padding: 30px;
+            margin: 100px auto;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 5px;
-        }
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 275px;
-            padding-bottom: 11%;
         }
     </style>
 </head>
 <body class="bg-light">
     <div class="container">
         <div class="login-container bg-white">
-            <img th:src="@{/images/daybyday-logo.png}" alt="Logo">
+            <h2 class="text-center mb-4">Dashboard CRM</h2>
             
             <div th:if="${error}" class="alert alert-danger" role="alert">
                 <span th:text="${error}"></span>
