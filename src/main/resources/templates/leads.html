@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="/crm/css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/ionicons.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/bootstrap.min.css.map" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/owl.carousel.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/table.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/fonts/icomoon/style.css">
+    <title>CRM JAVA</title>
+    <style>
+        
+      form input[type="submit"] {
+          width: max-content;
+          background-color: #657bb1b0;
+          color: #fff;
+          font-size: 1em;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+      form input[type="submit"]:hover {
+          background-color: #1648c1;
+      }
+      form input, select{
+          border-radius: 5px;
+          width: 200px;
+          height: 30px;
+          margin-right: 10px;
+          margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="all">
+    <div th:replace="~{navbar :: navbar}"></div>
+
+    <div class="page">
+      <div class="content">
+    
+      <div class="container">
+        <h2 class="mb-5">LEADS</h2>
+          
+        <div class="table-responsive">
+  
+          <table class="table table-striped custom-table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${leads}">
+                    <td th:text="${item['title']}"></td>
+                    <td th:text="${item['deadline']}"></td>
+                    <td th:text="${item['status']['title']}"></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+
+  </div>
+  </body>
+</html>

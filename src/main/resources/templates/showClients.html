@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="/crm/css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/ionicons.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/bootstrap.min.css.map" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/owl.carousel.min.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/css/table.css" >
+        <link rel="stylesheet" type="text/css" href="/crm/fonts/icomoon/style.css">
+    <title>CRM JAVA</title>
+    <style>
+        
+      form input[type="submit"] {
+          width: max-content;
+          background-color: #657bb1b0;
+          color: #fff;
+          font-size: 1em;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+      form input[type="submit"]:hover {
+          background-color: #1648c1;
+      }
+      form input, select{
+          border-radius: 5px;
+          width: 200px;
+          height: 30px;
+          margin-right: 10px;
+          margin-bottom: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+  <div class="all">
+    <div th:replace="~{navbar :: navbar}"></div>
+
+    <div class="page">
+      <div class="content">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="mb-5">Client</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <tr>
+                                <th scope="col" th:text="${data['client']['company_name']}"></th>
+                                <th scope="col" th:text="${data['contactInfo'][0]['name']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" th:text="${data['client']['address']}"></th>
+                                <th scope="col" th:text="${data['contactInfo'][0]['email']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" th:text="${data['client']['city']}"></th>
+                                <th scope="col" th:text="${data['contactInfo'][0]['primary_number']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col" th:text="${data['client']['company_type']}"></th>
+                                <th scope="col" th:text="${data['contactInfo'][0]['secondary_number']}"></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-5">User Assined</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col" th:text="${data['user']['name']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Department</th>
+                                <th scope="col" th:text="${data['user']['department'][0]['name']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col" th:text="${data['user']['email']}"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col" th:text="${data['user']['primary_number']}"></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mb-5">Client's Leads</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">DeadLine</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="item : ${data['leads']}">
+                                    <td th:text="${item['title']}"></td>
+                                    <td th:text="${item['deadline']}"></td>
+                                    <td th:text="${item['status']['title']}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mb-5">Client's Projects</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">DeadLine</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="item : ${data['projects']}">
+                                    <td th:text="${item['title']}"></td>
+                                    <td th:text="${item['deadline']}"></td>
+                                    <td th:text="${item['status']['title']}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+  </body>
+</html>

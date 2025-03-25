@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="chart">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Paiements mensuels</h5>
+                        <canvas id="paymentsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Projets par statut</h5>
+                        <canvas id="projectsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Évolution des factures</h5>
+                        <canvas id="invoicesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script th:inline="javascript">
+            // Données des graphiques avec valeurs par défaut
+            const paymentStats = /*[[${paymentStats}]]*/ [] || [];
+            const projectStats = /*[[${projectStats}]]*/ [] || [];
+            const invoiceStats = /*[[${invoiceStats}]]*/ [] || [];
+
+            // Fonction utilitaire pour vérifier si les données sont valides
+            function hasData(data) {
+                return Array.isArray(data) && data.length > 0;
+            }
+
+            // Fonction pour obtenir le nom du mois
+            function getMonthName(monthNumber) {
+                const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+                return months[monthNumber - 1] || '';
+            }
+
+            // Graphique des projets
+            if (hasData(projectStats)) {
+                console.log('Project stats:', projectStats);  // Debug
+                new Chart(document.getElementById('projectsChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: projectStats.map(stat => stat.status || 'Non défini'),
+                        datasets: [{
+                            data: projectStats.map(stat => stat.count || 0),
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.5)',   // Rouge
+                                'rgba(54, 162, 235, 0.5)',   // Bleu
+                                'rgba(75, 192, 192, 0.5)',   // Vert
+                                'rgba(255, 206, 86, 0.5)',   // Jaune
+                                'rgba(153, 102, 255, 0.5)'   // Violet
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.log('No project stats data available');  // Debug
+            }
+
+            // Graphique des factures
+            if (hasData(invoiceStats)) {
+                console.log('Invoice stats:', invoiceStats);  // Debug
+                new Chart(document.getElementById('invoicesChart'), {
+                    type: 'line',
+                    data: {
+                        labels: invoiceStats.map(stat => getMonthName(stat.month)),
+                        datasets: [{
+                            label: 'Nombre de factures',
+                            data: invoiceStats.map(stat => stat.count || 0),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.log('No invoice stats data available');  // Debug
+            }
+
+            // Graphique des paiements
+            if (hasData(paymentStats)) {
+                new Chart(document.getElementById('paymentsChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: paymentStats.map(stat => {
+                            const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+                            return months[stat.month - 1];
+                        }),
+                        datasets: [{
+                            label: 'Montant total',
+                            data: paymentStats.map(stat => stat.total),
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

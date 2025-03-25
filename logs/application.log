@@ -1,0 +1,915 @@
+17:17:38.724 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:17:38.724 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:17:38.724 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:17:39.187 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:17:39.189 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:17:39.189 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:17:39.219 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:17:39.220 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 489 ms
+17:17:39.462 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:17:39.515 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:17:39.554 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:17:39.677 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:17:39.759 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:17:39.800 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:17:39.803 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.464 seconds (process running for 15.069)
+17:17:39.809 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:17:55.785 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:17:55.787 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:17:55.787 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+17:17:55.787 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+17:17:55.787 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+17:17:55.787 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1d623f72
+17:17:55.801 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2d00ccbd
+17:17:55.801 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+17:17:55.801 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+17:17:55.861 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:17:55.904 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:17:55.958 [http-nio-8080-exec-2] INFO  c.c.C.controller.DashboardController - Fetching invoices from service
+17:17:55.964 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching invoices from URL: http://localhost:8000/api/dashboard/invoices
+17:17:56.032 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:17:56.085 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:17:59.799 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:17:59.803 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:18:00.121 [http-nio-8080-exec-2] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:18:00.184 [http-nio-8080-exec-2] INFO  c.c.C.controller.DashboardController - Retrieved 0 invoices from service
+17:18:00.215 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:18:01.070 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:01.139 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/css/style.css", parameters={}
+17:18:01.149 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+17:18:01.160 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:22.219 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:18:22.222 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:18:22.231 [http-nio-8080-exec-6] INFO  c.c.C.controller.DashboardController - Fetching invoices from service
+17:18:22.232 [http-nio-8080-exec-6] INFO  c.com.CRM.service.DashboardService - Fetching invoices from URL: http://localhost:8000/api/dashboard/invoices
+17:18:22.247 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:18:22.262 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:25.733 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:25.735 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:18:25.761 [http-nio-8080-exec-6] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:18:25.828 [http-nio-8080-exec-6] INFO  c.c.C.controller.DashboardController - Retrieved 0 invoices from service
+17:18:25.834 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:18:25.885 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:25.907 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/css/style.css", parameters={}
+17:18:25.921 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+17:18:25.927 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:26.374 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:18:26.376 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:18:26.376 [http-nio-8080-exec-7] INFO  c.c.C.controller.DashboardController - Fetching invoices from service
+17:18:26.376 [http-nio-8080-exec-7] INFO  c.com.CRM.service.DashboardService - Fetching invoices from URL: http://localhost:8000/api/dashboard/invoices
+17:18:26.382 [http-nio-8080-exec-7] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:18:26.395 [http-nio-8080-exec-7] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:29.607 [http-nio-8080-exec-7] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:29.608 [http-nio-8080-exec-7] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:18:29.624 [http-nio-8080-exec-7] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:18:29.671 [http-nio-8080-exec-7] INFO  c.c.C.controller.DashboardController - Retrieved 0 invoices from service
+17:18:29.684 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:18:29.709 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:29.750 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/css/style.css", parameters={}
+17:18:29.754 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+17:18:29.757 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:32.679 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/offers", parameters={}
+17:18:32.681 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getOffers(Model)
+17:18:32.698 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+17:18:32.706 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+17:18:32.726 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/login", parameters={}
+17:18:32.729 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.LoginController#showLoginForm()
+17:18:32.731 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:18:32.748 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:18:34.978 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/crm/login", parameters={masked}
+17:18:34.984 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.LoginController#login(String, String, Model)
+17:18:35.056 [http-nio-8080-exec-3] INFO  c.com.CRM.controller.LoginController - Tentative de connexion pour l'email: admin@admin.com
+17:18:35.056 [http-nio-8080-exec-3] INFO  c.com.CRM.controller.LoginController - URL de l'API: http://localhost:8000/api/login
+17:18:35.056 [http-nio-8080-exec-3] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8000/api/login
+17:18:35.085 [http-nio-8080-exec-3] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:35.110 [http-nio-8080-exec-3] DEBUG o.s.web.client.RestTemplate - Writing [{password=admin123, email=admin@admin.com}] as "application/json"
+17:18:38.358 [http-nio-8080-exec-3] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:38.358 [http-nio-8080-exec-3] DEBUG o.s.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+17:18:38.369 [http-nio-8080-exec-3] INFO  c.com.CRM.controller.LoginController - Connexion réussie pour l'email: admin@admin.com
+17:18:38.377 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+17:18:38.377 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+17:18:38.439 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard", parameters={}
+17:18:38.439 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getDashboard(Model)
+17:18:38.443 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/clients/count
+17:18:38.444 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/clients/count
+17:18:38.445 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:40.934 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:40.939 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:40.942 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 70
+17:18:40.943 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/projects/count
+17:18:40.944 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/projects/count
+17:18:40.946 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:43.570 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:43.570 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:43.575 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 1
+17:18:43.577 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/tasks/count
+17:18:43.577 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/tasks/count
+17:18:43.577 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:46.199 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:46.200 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:46.203 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 50
+17:18:46.205 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/offers/count
+17:18:46.207 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/offers/count
+17:18:46.208 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:49.232 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:49.233 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:49.237 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 2
+17:18:49.238 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/invoices/count
+17:18:49.240 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices/count
+17:18:49.241 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:51.803 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:51.806 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:51.809 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 12
+17:18:51.811 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Fetching count from URL: http://localhost:8000/api/dashboard/payments/count
+17:18:51.815 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/payments/count
+17:18:51.816 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:18:54.655 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:18:54.658 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:18:54.659 [http-nio-8080-exec-2] INFO  c.com.CRM.service.DashboardService - Received count: 3
+17:18:54.669 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:18:54.706 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:19:21.090 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:19:21.091 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:19:21.091 [http-nio-8080-exec-1] INFO  c.c.C.controller.DashboardController - Fetching invoices from service
+17:19:21.091 [http-nio-8080-exec-1] INFO  c.com.CRM.service.DashboardService - Fetching invoices from URL: http://localhost:8000/api/dashboard/invoices
+17:19:21.102 [http-nio-8080-exec-1] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:19:21.112 [http-nio-8080-exec-1] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:19:24.542 [http-nio-8080-exec-1] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:19:24.542 [http-nio-8080-exec-1] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:19:24.575 [http-nio-8080-exec-1] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:19:24.655 [http-nio-8080-exec-1] INFO  c.c.C.controller.DashboardController - Retrieved 0 invoices from service
+17:19:24.679 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:19:24.693 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:19:24.718 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/css/style.css", parameters={}
+17:19:24.723 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+17:19:24.731 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:20:13.419 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+17:20:13.425 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:20:13.550 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:20:13.771 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:20:13.773 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:20:13.773 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:20:14.598 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:20:14.640 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:20:14.641 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:20:14.736 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:20:14.736 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 957 ms
+17:20:14.948 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:20:14.955 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:20:14.971 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:20:15.005 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:20:15.060 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:20:15.080 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:20:15.084 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.397 seconds (process running for 170.352)
+17:20:15.092 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:21:01.617 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+17:21:01.625 [Thread-11] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:21:01.691 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:21:01.913 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:21:01.915 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:21:01.917 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:21:02.716 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:21:02.719 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:21:02.722 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:21:02.807 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:21:02.816 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 890 ms
+17:21:02.995 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:21:03.016 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:21:03.056 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:21:03.111 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:21:03.218 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:21:03.238 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:21:03.249 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.405 seconds (process running for 218.513)
+17:21:03.254 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:21:24.558 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+17:21:24.575 [Thread-15] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:21:24.706 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:21:24.862 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:21:24.864 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:21:24.865 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:21:25.697 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:21:25.703 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:21:25.705 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:21:25.775 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:21:25.781 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 909 ms
+17:21:25.916 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:21:25.935 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:21:25.986 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:21:26.113 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:21:26.246 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:21:26.264 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:21:26.282 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.497 seconds (process running for 241.547)
+17:21:26.290 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:23:09.636 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+17:23:09.644 [Thread-19] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:23:09.708 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:23:09.921 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:23:09.923 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:23:09.924 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:23:10.531 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:23:10.538 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:23:10.539 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:23:10.581 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:23:10.583 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 652 ms
+17:23:10.652 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:23:10.664 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:23:10.673 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:23:10.688 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:23:10.737 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:23:10.765 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:23:10.774 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 0.912 seconds (process running for 346.039)
+17:23:10.781 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:23:26.771 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+17:23:26.775 [Thread-23] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:23:26.841 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:23:27.344 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:23:27.346 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:23:27.346 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:23:27.996 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:23:28.001 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:23:28.002 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:23:28.056 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:23:28.057 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 708 ms
+17:23:28.181 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:23:28.197 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:23:28.218 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:23:28.244 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:23:28.301 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:23:28.326 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:23:28.335 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.306 seconds (process running for 363.599)
+17:23:28.340 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:24:13.801 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+17:24:13.815 [Thread-27] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:24:13.954 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:24:14.101 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 14000 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:24:14.102 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:24:14.103 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:24:14.508 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:24:14.509 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:24:14.510 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:24:14.564 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:24:14.565 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 459 ms
+17:24:14.749 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:24:14.812 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:24:14.840 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:24:14.891 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:24:14.968 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:24:15.133 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:24:15.191 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 1.142 seconds (process running for 410.454)
+17:24:15.223 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:24:50.268 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:24:50.323 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:25:08.346 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 13072 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:25:08.351 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:25:08.352 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:25:08.458 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+17:25:08.460 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+17:25:11.804 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17:25:11.895 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:25:11.909 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:25:11.912 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+17:25:12.118 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring embedded WebApplicationContext
+17:25:12.124 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3660 ms
+17:25:12.810 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 17 mappings in 'requestMappingHandlerMapping'
+17:25:12.889 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+17:25:13.298 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+17:25:13.501 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+17:25:13.666 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:25:13.694 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:25:13.755 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/crm'
+17:25:13.772 [restartedMain] INFO  crm.com.CRM.CrmApplication - Started CrmApplication in 6.213 seconds (process running for 7.649)
+17:25:37.965 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[localhost].[/crm] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:25:37.966 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:25:37.967 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+17:25:37.967 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+17:25:37.967 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+17:25:37.967 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@efe4ac3
+17:25:37.967 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@305b53c8
+17:25:37.974 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+17:25:37.981 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+17:25:38.005 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:25:38.025 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:25:38.116 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:25:38.168 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:39.854 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/offers", parameters={}
+17:25:39.856 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getOffers(Model)
+17:25:39.914 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+17:25:39.919 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+17:25:39.958 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/login", parameters={}
+17:25:39.965 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.LoginController#showLoginForm()
+17:25:39.977 [http-nio-8080-exec-3] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:25:40.995 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:25:41.776 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:41.781 [http-nio-8080-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:25:42.082 [http-nio-8080-exec-2] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: {}Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:25:42.121 [http-nio-8080-exec-2] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:25:42.224 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:25:42.698 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/crm/login", parameters={masked}
+17:25:42.701 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.LoginController#login(String, String, Model)
+17:25:42.749 [http-nio-8080-exec-4] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:8000/api/login
+17:25:42.757 [http-nio-8080-exec-4] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:42.774 [http-nio-8080-exec-4] DEBUG o.s.web.client.RestTemplate - Writing [{password=admin123, email=admin@admin.com}] as "application/json"
+17:25:46.792 [http-nio-8080-exec-4] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:46.792 [http-nio-8080-exec-4] DEBUG o.s.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+17:25:46.964 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.view.RedirectView - View name [redirect:], model {}
+17:25:47.023 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+17:25:47.143 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard", parameters={}
+17:25:47.150 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getDashboard(Model)
+17:25:47.152 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/clients/count
+17:25:47.153 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:49.906 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:49.911 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:25:49.951 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/projects/count
+17:25:49.952 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:52.666 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:52.669 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:25:52.673 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/tasks/count
+17:25:52.674 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:55.671 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:55.674 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:25:55.680 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/offers/count
+17:25:55.681 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:25:58.838 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:25:58.838 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:25:58.894 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices/count
+17:25:58.896 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:26:01.709 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:26:01.711 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:26:01.716 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/payments/count
+17:26:01.718 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:26:04.726 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:26:04.726 [http-nio-8080-exec-5] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.Long]
+17:26:04.740 [http-nio-8080-exec-5] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:26:04.794 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:26:09.852 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/dashboard/invoices", parameters={}
+17:26:09.855 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to crm.com.CRM.controller.DashboardController#getInvoices(Model)
+17:26:09.880 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - HTTP GET http://localhost:8000/api/dashboard/invoices
+17:26:09.895 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+17:26:13.578 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+17:26:13.581 [http-nio-8080-exec-6] DEBUG o.s.web.client.RestTemplate - Reading to [crm.com.CRM.wrapper.InvoiceWrapper[]]
+17:26:13.633 [http-nio-8080-exec-6] ERROR c.com.CRM.service.DashboardService - Error fetching invoices: {}Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+org.springframework.web.client.RestClientException: Error while extracting response for type [class [Lcrm.com.CRM.wrapper.InvoiceWrapper;] and content type [application/json]
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:127)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1183)
+	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1166)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:903)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:683)
+	at crm.com.CRM.service.DashboardService.getInvoices(DashboardService.java:220)
+	at crm.com.CRM.controller.DashboardController.getInvoices(DashboardController.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357)
+	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:105)
+	... 55 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "2025-03-24 06:21:33": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2025-03-24 06:21:33' could not be parsed at index 10
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 31027] (through reference chain: java.lang.Object[][10]->crm.com.CRM.wrapper.InvoiceWrapper["invoice"]->crm.com.CRM.model.Invoice["sent_at"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1959)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:216)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:114)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:41)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:218)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2131)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398)
+	... 57 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '2025-03-24 06:21:33' could not be parsed at index 10
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:214)
+	... 70 common frames omitted
+17:26:13.675 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+17:26:13.689 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:26:13.717 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/crm/css/style.css", parameters={}
+17:26:13.722 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+17:26:13.728 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+17:27:46.923 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+17:27:46.933 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+17:27:46.949 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+17:27:47.028 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+17:27:47.030 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+17:27:47.140 [restartedMain] INFO  crm.com.CRM.CrmApplication - Starting CrmApplication using Java 21.0.5 with PID 13072 (D:\CRM-Final\CRM\target\classes started by user in D:\CRM-Final\CRM)
+17:27:47.141 [restartedMain] DEBUG crm.com.CRM.CrmApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+17:27:47.142 [restartedMain] INFO  crm.com.CRM.CrmApplication - No active profile set, falling back to 1 default profile: "default"
+17:27:47.345 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'objectMapper' defined in class path resource [crm/com/CRM/config/RestTemplateConfig.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=restTemplateConfig; factoryMethodName=objectMapper; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [crm/com/CRM/config/RestTemplateConfig.class]] for bean 'objectMapper' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=jacksonConfig; factoryMethodName=objectMapper; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [crm/com/CRM/config/JacksonConfig.class]] bound.
+17:27:47.351 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:27:47.399 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'objectMapper', defined in class path resource [crm/com/CRM/config/RestTemplateConfig.class], could not be registered. A bean with that name has already been defined in class path resource [crm/com/CRM/config/JacksonConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
